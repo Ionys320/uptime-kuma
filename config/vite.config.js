@@ -11,6 +11,7 @@ const viteCompressionFilter = /\.(js|mjs|json|css|html|svg)$/i;
 
 // https://vitejs.dev/config/
 export default defineConfig({
+    base: "/test/",
     server: {
         port: 3000,
     },

@@ -194,6 +194,6 @@ const routes = [
 
 export const router = createRouter({
     linkActiveClass: "active",
-    history: createWebHistory(),
+    history: createWebHistory(import.meta.env.BASE_URL),
     routes,
 });

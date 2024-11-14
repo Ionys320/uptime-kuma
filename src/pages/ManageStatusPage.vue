@@ -16,13 +16,13 @@
                     </span>
 
                     <!-- use <a> instead of <router-link>, because the heartbeat won't load. -->
-                    <a v-for="statusPage in $root.statusPageList" :key="statusPage.slug" :href="'/status/' + statusPage.slug" class="item">
+                    <router-link v-for="statusPage in $root.statusPageList" :key="statusPage.slug" :to="'/status/' + statusPage.slug" class="item">
                         <img :src="icon(statusPage.icon)" alt class="logo me-2" />
                         <div class="info">
                             <div class="title">{{ statusPage.title }}</div>
-                            <div class="slug">/status/{{ statusPage.slug }}</div>
+                            <div class="slug">{{ import.meta.env.BASE_URL }}status/{{ statusPage.slug }}</div>
                         </div>
-                    </a>
+                    </router-link>
                 </template>
                 <div v-else class="d-flex align-items-center justify-content-center my-3 spinner">
                     <font-awesome-icon icon="spinner" size="2x" spin />

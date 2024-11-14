@@ -65,7 +65,7 @@ export default {
                 this.processing = false;
 
                 if (res.ok) {
-                    location.href = "/status/" + this.slug + "?edit";
+                    location.href = import.meta.env.BASE_URL + "status/" + this.slug + "?edit";
                 } else {
 
                     if (res.msg.includes("UNIQUE constraint")) {

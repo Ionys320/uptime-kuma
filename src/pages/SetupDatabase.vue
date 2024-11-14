@@ -135,7 +135,7 @@ export default {
         this.info = res.data;
 
         if (this.info && this.info.needSetup === false) {
-            location.href = "/setup";
+            location.href = import.meta.env.BASE_URL + "setup";
         } else {
             this.show = true;
         }
@@ -164,7 +164,7 @@ export default {
                 let res = await axios.get("/setup-database-info");
                 if (res.data && res.data.needSetup === false) {
                     this.show = false;
-                    location.href = "/setup";
+                    location.href = import.meta.env.BASE_URL + "setup";
                 } else {
                     if (res.data) {
                         this.info = res.data;
